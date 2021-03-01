@@ -43,7 +43,7 @@ namespace TaskAsigment.Controllers
         }
         [HttpPost]
         
-        public async Task<ActionResult<User>> postProject(Project project){
+        public async Task<ActionResult<Project>> postProject(Project project){
             _context.Projects.Add(project);
             await _context.SaveChangesAsync();
             return CreatedAtAction("getProject", new {id = project.id}, project);
@@ -88,6 +88,11 @@ namespace TaskAsigment.Controllers
             _context.Tareas.Add(task);
             await _context.SaveChangesAsync();
             return CreatedAtAction("getTask", new {id = task.id}, task);
+        }
+        [HttpGet("{id}/tasks/{idtask}")]
+        public async Task<ActionResult<Tasks>> getProjectTask(long id, long idtask){
+             return await _context.Tareas.Where(b => b.projectId == id && b.id == idtask).SingleAsync();
+             
         }
     }
 }
