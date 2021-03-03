@@ -3,6 +3,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths":{
+      "os":[
+        "src/empty.ts"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -27,4 +32,6 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
+
+
 }
