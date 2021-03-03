@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VmbnB887depIDDvH8QNJdoAchIYVWPq+HWQwvq9Kiztn9j6VGbkNhM7EwWB/MPqQlVUuAZvPBa3aj0PGOEowSA==",
+  "dgSpecHash": "ybqV1QWc5TK05bdgFWkJuWaKcR4TDlKF8nR/hHsLjPi+0ZjY7wWDlgeWQKUl8wY+DJl5xu61ygu01gdbtaZN9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\TaskAsigment.csproj",
+  "projectFilePath": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\api\\TaskAsigment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dmsol\\.nuget\\packages\\efcore.namingconventions\\5.0.2\\efcore.namingconventions.5.0.2.nupkg.sha512",
     "C:\\Users\\dmsol\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

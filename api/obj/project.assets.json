@@ -5916,11 +5916,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\TaskAsigment.csproj",
+      "projectUniqueName": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\api\\TaskAsigment.csproj",
       "projectName": "TaskAsigment",
-      "projectPath": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\TaskAsigment.csproj",
+      "projectPath": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\api\\TaskAsigment.csproj",
       "packagesPath": "C:\\Users\\dmsol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\obj\\",
+      "outputPath": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dmsol\\AppData\\Roaming\\NuGet\\NuGet.Config"

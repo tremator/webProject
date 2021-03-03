@@ -29,6 +29,11 @@ namespace TaskAsigment
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             //services.AddDbContext<DatabaseContext>(options => options.UseInMemoryDatabase("tarea1"));
             services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(connectionString).UseSnakeCaseNamingConvention());
+            services.AddCors(options => options.AddPolicy("CorsPolicy", builder => {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
             services.AddControllers();
         }
 
@@ -39,6 +44,8 @@ namespace TaskAsigment
             {
                 app.UseDeveloperExceptionPage();
             }
+            
+            app.UseCors("CorsPolicy");
 
             app.UseHttpsRedirection();
 
