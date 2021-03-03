@@ -11,6 +11,9 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import {APP_BASE_HREF} from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 @NgModule({
@@ -27,6 +30,7 @@ import {APP_BASE_HREF} from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/login'}],
