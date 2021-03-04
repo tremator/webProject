@@ -56,11 +56,10 @@ export class ProjectService {
   }
 
   //POST
+  /*
+  taskinfo: must contain user_id y project_id
+  */
   postTask(idproject:string, taskinfo:any){
     return this.http.post(AUTH_API + idproject+"/tasks",taskinfo,httpOptions);
   }
-
-  //PUT
-  //DELETE
-  //PATCH
 }
