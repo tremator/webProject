@@ -4,7 +4,8 @@ import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   form: any = {
@@ -32,14 +33,17 @@ export class LoginComponent implements OnInit {
       data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
-
+        console.log(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         this.reloadPage();
       },
       err => {
+        console.log(this.form);
         this.errorMessage = err.error.message;
+        console.log(this.errorMessage);
+        console.log(err.error.message);
         this.isLoginFailed = true;
       }
     );
