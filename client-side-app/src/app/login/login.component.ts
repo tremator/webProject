@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -28,16 +29,20 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     const { username, password } = this.form;
-
-    this.authService.login(username, password).subscribe(
+    var authinfo = {
+      "email":username,
+      "password":password
+    }
+    this.authService.login(authinfo).subscribe(
       data => {
-        this.tokenStorage.saveToken(data.accessToken);
+        //this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         console.log(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+        //this.roles = this.tokenStorage.getUser().roles;
+        console.log("llego");
+        //this.reloadPage();
       },
       err => {
         console.log(this.form);
