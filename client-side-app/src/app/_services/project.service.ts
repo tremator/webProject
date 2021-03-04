@@ -15,7 +15,7 @@ export class ProjectService {
 
   constructor(private http: HttpClient) { }
 
-//PORJECTS
+//PROJECTS
 
   //GET
   getProjects(){
@@ -31,7 +31,7 @@ export class ProjectService {
     return this.http.post(AUTH_API, projectinfo, httpOptions);
   }
 
-  //UPDATE
+  //PUT
   updateproject(id:string, projectinfo:any){
     return this.http.put(AUTH_API + id, projectinfo, httpOptions);
   }
@@ -59,8 +59,8 @@ export class ProjectService {
   postTask(idproject:string, taskinfo:any){
     return this.http.post(AUTH_API + idproject+"/tasks",taskinfo,httpOptions);
   }
-  
-  //UPDATE
+
+  //PUT
   //DELETE
   //PATCH
 }
