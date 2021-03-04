@@ -15,26 +15,52 @@ export class ProjectService {
 
   constructor(private http: HttpClient) { }
 
-  getProject(id:string){
-    return this.http.get(AUTH_API + id);
-  }
+//PORJECTS
 
+  //GET
   getProjects(){
     return this.http.get(AUTH_API)
   }
 
+  getProject(id:string){
+    return this.http.get(AUTH_API + id);
+  }
+
+ //POST
   postProject(projectinfo:any){
     return this.http.post(AUTH_API, projectinfo, httpOptions);
   }
 
+  //UPDATE
   updateproject(id:string, projectinfo:any){
     return this.http.put(AUTH_API + id, projectinfo, httpOptions);
   }
-
-  deleteProject(){
-    return
+  //DELETE
+  deleteProject(id:string){
+    return this.http.delete(AUTH_API + id);
+  }
+  //PATCH
+  patchProject(id:string, projectinfo:any){
+    return this.http.patch(AUTH_API + id, projectinfo, httpOptions);
   }
 
-  
+//TASKS
 
+  //GET
+  geTasks(idproject:string){
+    return this.http.get(AUTH_API + idproject + "/tasks");
+  }
+
+  getProjectTask(idproject:string, idtask:string){
+    return this.http.get(AUTH_API + idproject +"/tasks/"+idtask)
+  }
+
+  //POST
+  postTask(idproject:string, taskinfo:any){
+    return this.http.post(AUTH_API + idproject+"/tasks",taskinfo,httpOptions);
+  }
+  
+  //UPDATE
+  //DELETE
+  //PATCH
 }
