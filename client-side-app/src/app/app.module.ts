@@ -11,6 +11,9 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { ProjectComponent } from './project/project.component';
+import { BoardComponent } from './board/board.component';
+import { TaskBoardComponent } from './task-board/task-board.component';
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
+    ProjectComponent,
+    BoardComponent,
+    TaskBoardComponent,
   ],
   imports: [
     BrowserModule,
