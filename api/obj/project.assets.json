@@ -5911,28 +5911,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dmsol\\.nuget\\packages\\": {}
+    "C:\\Users\\crist\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\api\\TaskAsigment.csproj",
+      "projectUniqueName": "C:\\Users\\crist\\Documents\\Progra Web 2\\webProject\\api\\TaskAsigment.csproj",
       "projectName": "TaskAsigment",
-      "projectPath": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\api\\TaskAsigment.csproj",
-      "packagesPath": "C:\\Users\\dmsol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dmsol\\OneDrive\\Documents\\progra2\\proyecto\\TaskAsigment\\api\\obj\\",
+      "projectPath": "C:\\Users\\crist\\Documents\\Progra Web 2\\webProject\\api\\TaskAsigment.csproj",
+      "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\crist\\Documents\\Progra Web 2\\webProject\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dmsol\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5944,6 +5947,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "EFCore.NamingConventions": {
             "target": "Package",
@@ -5990,7 +5994,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
