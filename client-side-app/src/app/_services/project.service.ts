@@ -40,6 +40,9 @@ export class ProjectService {
     return this.http.delete(AUTH_API + id);
   }
   //PATCH
+  /*
+  
+  */
   patchProject(id:string, projectinfo:any){
     return this.http.patch(AUTH_API + id, projectinfo, httpOptions);
   }
