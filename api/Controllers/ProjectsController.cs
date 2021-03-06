@@ -94,5 +94,15 @@ namespace TaskAsigment.Controllers
              return await _context.Tareas.Where(b => b.projectId == id && b.id == idtask).SingleAsync();
              
         }
+        [HttpGet("{id}/users")]
+        public async Task<ActionResult<IEnumerable<User>>> getUsers (long id){
+            var x = _context.Tareas.Where((b)=> b.projectId == id).ToList();
+            List<User> users =new List<User>();
+            foreach(var task in x){
+                var user = await _context.Users.FindAsync(task.userId);
+                users.Add(user);
+            }
+            return users;
+        }
     }
 }
