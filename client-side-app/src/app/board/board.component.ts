@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectStatusesService } from '../_services/project-statuses.service';
-import { TaskService } from '../_services/task.service';
 import { ProjectService } from '../_services/project.service';
 
 
@@ -11,14 +9,18 @@ import { ProjectService } from '../_services/project.service';
 })
 export class BoardComponent implements OnInit {
 
-  public statuses: any;
-  public task: any;
+  form: any = {
+    name: null,
+    description: null
+  };
+
   public project: any;
+  public projectId="";
+  public projects = [];
   errorMessage = '';
 
-  constructor(private projectId: string, private projectservices: ProjectService, private taskservice: TaskService, private projectstatusesservice: ProjectStatusesService) {
-    this.statuses = [];
-    this.task = [];
+  //private projectId: string, 
+  constructor( private projectservices: ProjectService) {
     this.project = [];
   }
 
@@ -27,7 +29,8 @@ export class BoardComponent implements OnInit {
   */
   ngOnInit(): void {
 
-    
+    //it obtains the projects of the specific user
+    //Revisar en el api que esta obteniendo los del usuario especifico
     this.projectservices.getProject(this.projectId).subscribe(
       (response)=>{
         this.project = response;
@@ -39,6 +42,33 @@ export class BoardComponent implements OnInit {
       }
     )  
   
+  }
+  // CRUD's Methods for projects
+  newProject():void{
+  const { name, description} = this.form;
+  var projectinfo = {
+    "name":name,
+    "description":description
+  }
+    this.projectservices.postProject(projectinfo).subscribe(
+      data=>{
+        console.log(data);
+      },
+      
+      
+    )
+  }
+
+  deleteProject() :void{
+    this.projectservices.deleteProject(this.projectId).subscribe
+  }
+
+  updateProject() :void{
+    this.projectservices.updateproject(this.projectId,this.project).subscribe
+  }
+
+  patchProject():void{
+    this.projectservices.patchProject(this.projectId,this.project).subscribe
   }
 
 }
