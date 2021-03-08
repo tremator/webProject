@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../_services/project.service';
 
-
 @Component({
-  selector: 'app-board',
-  templateUrl: './board.component.html',
-  styleUrls: ['./board.component.css']
+  selector: 'app-project-board',
+  templateUrl: './project-board.component.html',
+  styleUrls: ['./project-board.component.css']
 })
-export class BoardComponent implements OnInit {
-
+export class ProjectBoardComponent implements OnInit {
   form: any = {
     name: null,
     description: null

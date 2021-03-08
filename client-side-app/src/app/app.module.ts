@@ -6,13 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { ProfileComponent } from './profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { BoardComponent } from './board/board.component';
 import { TaskBoardComponent } from './task-board/task-board.component';
+import {ProjectBoardComponent  } from "./project-board/project-board.component";
+
+//News components
 
 
 @NgModule({
@@ -20,12 +18,9 @@ import { TaskBoardComponent } from './task-board/task-board.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent,
-    BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent,
-    BoardComponent,
+    ProjectBoardComponent,
     TaskBoardComponent,
+   
   ],
   imports: [
     BrowserModule,
