@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { AuthService } from '../_services/auth.service';
+//Imports de prueba
+import { ProjectService } from '../_services/project.service';
+import { ProjectStatusesService } from '../_services/project-statuses.service';
+import { TaskService } from '../_services/task.service';
+
+
 import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
@@ -10,7 +16,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
 })
 export class LoginComponent implements OnInit {
   form: any = {
-    username: null,
+    email: null,
     password: null
   };
   isLoggedIn = false;
@@ -22,18 +28,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
+      this.isLoggedIn = false;
       this.roles = this.tokenStorage.getUser().roles;
     }
   }
 
   onSubmit(): void {
-    const { username, password } = this.form;
+    const { email, password } = this.form;
     var authinfo = {
-      "email":username,
+      "email":email,
       "password":password
     }
-    this.authService.login(authinfo).subscribe(
+
+  this.authService.login(authinfo).subscribe(
       data => {
         //this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
@@ -42,8 +49,9 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         //this.roles = this.tokenStorage.getUser().roles;
         console.log("llego");
-        //this.reloadPage();
+        this.reloadPage();
       },
+      
       err => {
         console.log(this.form);
         this.errorMessage = err.error.message;
@@ -51,10 +59,12 @@ export class LoginComponent implements OnInit {
         console.log(err.error.message);
         this.isLoginFailed = true;
       }
+      
     );
+    
   }
 
   reloadPage(): void {
-    window.location.reload();
+   
   }
 }
