@@ -8,6 +8,7 @@ import { TaskService } from '../_services/task.service';
 
 
 import { TokenStorageService } from '../_services/token-storage.service';
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private route:ActivatedRoute,private router:Router, private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -42,14 +43,14 @@ export class LoginComponent implements OnInit {
 
   this.authService.login(authinfo).subscribe(
       data => {
-        //this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         console.log(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         //this.roles = this.tokenStorage.getUser().roles;
         console.log("llego");
-        this.reloadPage();
+        this.redirectPage();
       },
       
       err => {
@@ -64,7 +65,7 @@ export class LoginComponent implements OnInit {
     
   }
 
-  reloadPage(): void {
-   
+  redirectPage(): void {
+   this.router.navigate(['/project-board']);
   }
 }
